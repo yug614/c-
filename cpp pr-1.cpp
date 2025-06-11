@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>  
+
+class TimeConverter {
+public:
+    static void convertToHHMMSS(int totalSeconds) {
+        int hours = totalSeconds / 3600;
+        int minutes = (totalSeconds % 3600) / 60;
+        int seconds = totalSeconds % 60;
+
+    
+        std::cout << "Time in HH:MM:SS format: "
+                  << std::setw(2) << std::setfill('0') << hours << ":"
+                  << std::setw(2) << std::setfill('0') << minutes << ":"
+                  << std::setw(2) << std::setfill('0') << seconds << std::endl;
+    }
+};
+
+int main() {
+    int secondsInput;
+    std::cout << "Enter total seconds: ";
+    std::cin >> secondsInput;
+
+    TimeConverter::convertToHHMMSS(secondsInput);
+
+    return 0;
+}
